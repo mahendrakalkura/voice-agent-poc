@@ -1,4 +1,4 @@
-.PHONY: install build run lint clean
+.PHONY: install bootstrap build run lint
 
 install:
 	sudo apt-get install -y libportaudio2 portaudio19-dev
@@ -6,6 +6,12 @@ install:
 		https://github.com/snakers4/silero-vad/raw/master/src/silero_vad/data/silero_vad.onnx
 	go mod download
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+	go install golang.org/x/tools/cmd/goimports@latest
+
+bootstrap:
+	go mod tidy
+	goimports -w .
+	gofmt -w .
 
 build:
 	go build -o bin/main ./...
@@ -15,6 +21,3 @@ run:
 
 lint:
 	golangci-lint run ./...
-
-clean:
-	rm -f bin/main silero_vad.onnx
