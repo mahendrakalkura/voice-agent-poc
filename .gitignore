@@ -1,0 +1,4 @@
+bin/
+*.onnx
+database.sqlite
+settings.toml
