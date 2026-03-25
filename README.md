@@ -5,7 +5,8 @@ Voice agent proof of concept with STT → LLM → TTS pipeline.
 ## Prerequisites
 
 - Go 1.21+
-- See `make install` below
+- Arch Linux: `sudo pacman -S --needed portaudio`
+- See `make install` for Go tooling
 
 ## Setup
 

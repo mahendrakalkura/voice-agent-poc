@@ -10,7 +10,7 @@ build:
 	go build -o main .
 
 install:
-	sudo apt-get install -y libportaudio2 portaudio19-dev
+	sudo pacman -S --needed portaudio
 	wget -O silero_vad.onnx -q https://github.com/snakers4/silero-vad/raw/master/src/silero_vad/data/silero_vad.onnx
 	go mod download
 	go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
