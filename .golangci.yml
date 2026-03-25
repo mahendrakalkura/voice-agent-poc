@@ -1,15 +1,18 @@
+issues:
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0
 linters:
-  enable-all: true
   disable:
-    - exhaustruct   # too noisy for struct literals
-    - gochecknoglobals  # globals are sometimes necessary (flags, loggers)
-    - gomnd         # magic numbers are fine in context
-    - wsl           # whitespace style is too opinionated
-    - nlreturn      # conflicts with other style rules
-    - varnamelen    # short names are idiomatic Go
-    - ireturn       # returning interfaces is common and valid
-    - depguard      # no import restrictions needed
-
+    - depguard
+    - exhaustruct
+    - gochecknoglobals
+    - gomnd
+    - ireturn
+    - nlreturn
+    - varnamelen
+    - wsl
+  enable-all: true
 linters-settings:
   cyclop:
     max-complexity: 10
@@ -28,8 +31,8 @@ linters-settings:
   gocyclo:
     min-complexity: 10
   godot:
-    scope: declarations
     capital: true
+    scope: declarations
   govet:
     enable-all: true
   lll:
@@ -43,17 +46,11 @@ linters-settings:
   revive:
     rules:
       - name: exported
-      - name: var-naming
       - name: package-comments
+      - name: var-naming
   tagliatelle:
     case:
       rules:
         json: snake
-
-issues:
-  max-issues-per-linter: 0
-  max-same-issues: 0
-  exclude-use-default: false
-
 run:
   timeout: 5m
