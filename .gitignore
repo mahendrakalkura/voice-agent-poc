@@ -1,4 +1,4 @@
-bin/
+main
 *.onnx
 database.sqlite
 settings.toml
