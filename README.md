@@ -18,10 +18,10 @@ cp settings.toml.example settings.toml  # fill in API keys
 
 ```bash
 make build
-./bin/main --action=serve
-./bin/main --microphone=default
-./bin/main --microphone=list
-./bin/main --action=report
+./main --action=serve
+./main --microphone=default
+./main --microphone=list
+./main --action=report
 ```
 
 ## See also
